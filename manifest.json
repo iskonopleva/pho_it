@@ -1,0 +1,21 @@
+{
+  "name": "Pho Editor",
+  "description": "Change anything on the page to PHO",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "128": "icons/pho.png"
+  },
+  "background": {
+  	"service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+          "notifications",
+          "storage",
+          "activeTab",
+          "scripting"
+  ]
+}
