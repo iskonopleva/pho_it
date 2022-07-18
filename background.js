@@ -6,16 +6,16 @@ chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
   	if(message.from && message.from === "popup"){
     	switch(message.action){
       		case "START_SELECTION":
-						chrome.tabs.query({currentWindow: true, active : true}, function(tabArray){
-	  					chrome.scripting.executeScript({
+				chrome.tabs.query({currentWindow: true, active : true}, function(tabArray){
+	  				chrome.scripting.executeScript({
 	        			target: { tabId: tabArray[0].id},
 	        			files: ['content_scripts/selector.js']
 	        		}); 
-						});
+				});
         		console.log("Selection replaced");
         		break;
-    }
-  }
+    	}
+  	}
 });
 
 
